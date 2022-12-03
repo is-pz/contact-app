@@ -1,5 +1,10 @@
 <?php 
 
+if (!isset($_SESSION["user"])) {
+  header("Location: login.php");
+  return;
+}
+
 require_once 'database.php';
 
 $contacts = $conn->query("SELECT * FROM contacts");
