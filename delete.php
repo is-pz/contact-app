@@ -12,7 +12,7 @@ if (!isset($_SESSION["user"])) {
 
 $id = $_GET["id"];
 
-$statement = $conn->prepare("SELECT * FROM contacts WHERE id = :id");
+$statement = $conn->prepare("SELECT * FROM contacts WHERE id = :id LIMIT 1");
 $statement->execute([":id" => $id]);
 
 if ($statement->rowCount() == 0) {
