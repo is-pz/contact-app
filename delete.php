@@ -23,4 +23,6 @@ if ($statement->rowCount() == 0) {
 
 $conn->prepare("DELETE FROM contacts WHERE id = :id")->execute([":id" => $id]);
 
+$_SESSION["flash"] = ["message" => "Contact {$contact['name']} deleted."];
+
 header("Location: home.php");

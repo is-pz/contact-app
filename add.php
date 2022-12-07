@@ -32,6 +32,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $statement->execute();
   
     $stmt = null;
+
+    $_SESSION["flash"] = ["message" => "Contact {$_POST['name']} added."];
+
     header("Location: home.php");
   }
 
