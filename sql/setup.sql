@@ -14,8 +14,11 @@ CREATE TABLE users (
 
 CREATE TABLE contacts(
     id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
     name VARCHAR(255) NULL COLLATE 'utf8_general_ci',
     phone_number VARCHAR(255) NULL COLLATE 'utf8_general_ci'
+
+    FOREIGN KEY(user_id) REFERENCES users(id)
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB

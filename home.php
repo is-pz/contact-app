@@ -7,7 +7,7 @@ if (!isset($_SESSION["user"])) {
 
 require_once 'database.php';
 
-$contacts = $conn->query("SELECT * FROM contacts");
+$contacts = $conn->query("SELECT * FROM contacts WHERE user_id = {$_SESSION['user']['id']}");
 
 ?>
 <?php require "partials/header.php" ?>
